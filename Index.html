@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Constelações RPG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPanel">
+  <h2>SISTEMA DAS CONSTELAÇÕES</h2>
+  <input type="text" id="playerName" placeholder="Digite seu nome">
+  <button id="loginBtn">Entrar</button>
+</div>
+
+<div id="characterPanel" class="panel">
+  <h2 id="charName">Player: -</h2>
+  <p>Nível: <span id="level">1</span> | XP: <span id="xp">0</span>/<span id="xpNeeded">50</span></p>
+  <p>Status: Saudável</p>
+  <p>Título: <span id="title">Iniciante</span></p>
+  <h3>Atributos</h3>
+  <p id="attributes">Força: 10 | Agilidade: 10 | Defesa: 10 | Resistência: 10 | Inteligência: 10</p>
+  <p id="activeMission">Missão Ativa: Nenhuma</p>
+</div>
+
+<div id="chatPanel" class="panel">
+  <h3>Chat das Constelações</h3>
+  <div id="chatMessages"></div>
+</div>
+
+<div id="missionPanel" class="panel">
+  <h3>Missões Disponíveis</h3>
+  <div id="missions"></div>
+  <h3>Enviar Missão</h3>
+  <div class="mission-form">
+    <input type="text" id="sendPlayer" placeholder="Nome do jogador">
+    <input type="text" id="sendMissionName" placeholder="Nome da missão">
+    <select id="sendDifficulty">
+      <option>SSS</option><option>SS</option><option>S</option><option>A</option>
+      <option>B</option><option>C</option><option>D</option><option>E</option>
+    </select>
+    <input type="text" id="sendReward" placeholder="Recompensa XP">
+    <input type="text" id="sendPenalty" placeholder="Penalidade">
+    <input type="number" id="sendTime" placeholder="Tempo limite (segundos)">
+    <button id="sendMissionBtn">Enviar Missão</button>
+  </div>
+</div>
+
+<div id="inventoryPanel" class="panel">
+  <h3>Inventário</h3>
+  <ul id="inventoryList"></ul>
+</div>
+
+<div id="wishPanel" class="panel">
+  <h3>Desejos de Missão</h3>
+  <input type="text" id="wishText" placeholder="Digite seu desejo de missão">
+  <button id="requestWishBtn">Pedir Desejo</button>
+  <div id="wishStatus"></div>
+</div>
+
+<div id="itemPopup">
+  <img id="itemImg" src="">
+  <h3 id="itemTitle">Item</h3>
+  <p id="itemDesc">Descrição do item</p>
+  <button onclick="closeItemPopup()">Fechar</button>
+</div>
+
+<div id="missionPopup">
+  <h3 id="missionPopupName">Missão</h3>
+  <p id="missionPopupDetails">Detalhes da missão</p>
+  <button id="acceptMissionBtn" onclick="aceitarMission()">Aceitar Missão</button>
+  <button id="recuseMissionBtn" class="recuse" onclick="recusarMission()">Recusar Missão</button>
+  <button id="finalizeMissionBtn" class="finalize" onclick="finalizarMission()" style="display:none;">Finalizar Missão</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
